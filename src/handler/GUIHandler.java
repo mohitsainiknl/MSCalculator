@@ -1,3 +1,7 @@
+/*
+ * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
+ * 
+ */
 package handler;
 
 import javax.swing.UIManager;
@@ -18,7 +22,9 @@ import theme.Theme;
 import com.gmail.mohitsainiknl2.gui.GridBagPanel;
 
 /**
- * GUILauncher
+ * GUILauncher class handle the gui functioning of this Calculator, Moreover,
+ * The key listener and the action listener is also add, to the component accordingly,
+ * here in this class. In short, this is the manager class of this calculator.
  */
 public class GUIHandler {
     Style style;
@@ -28,19 +34,29 @@ public class GUIHandler {
     CalcField mainField, subField;
     CalcButton numButton[], addButton, subButton, mtpyButton, divButton;
     CalcButton dotButton,signButton, resultButton, clearButton, backButton;
-    // KeyHandler key;
 
+
+    /**
+     * This constructor of GUIHandler help to initialize the initial conponent
+     * used throughtout the class, with the help of parameters, respectively.
+     * @param style this defines the style and the size of the Calculator.
+     * @param theme this defines the theme of the Calculator, with help of it's color-plate.
+     */
     public GUIHandler(Style style, Theme theme) {
         this.style = style;
         this.theme = theme;
     }
 
+    /**
+     * handle method is used to start the handling process of the gui.
+     * All the component are initialize, bind and set-up here in this class.
+     */
     public void handle() {
         UIManager.put("Button.select", theme.getButtonPressBKColor());
 
-        mainField = new CalcField("25", style, theme);
+        mainField = new CalcField("0", style, theme);       //<--- Field Panel
             mainField.setFont(style.getMainFieldFont());
-        subField = new CalcField("12 + 13 = 25", style, theme);
+        subField = new CalcField("", style, theme);
             subField.setFont(style.getSubFieldFont());
         fieldPanel = new GridBagPanel();
         fieldPanel.setOpaque(false);
@@ -48,7 +64,7 @@ public class GUIHandler {
         fieldPanel.add(subField,  0, 0,  1, 1);
         fieldPanel.add(mainField,  0, 1,  1, 2);
 
-        numButton = new CalcButton[10];
+        numButton = new CalcButton[10];         //<--- Buttons
         for (int i = 0; i <= 9; ++i) {
             numButton[i] = new CalcButton(i + "", ButtonType.NUMPAD, style, theme);
         }
@@ -64,12 +80,32 @@ public class GUIHandler {
         resultButton = new CalcButton("=", ButtonType.RESULT, style, theme);
             resultButton.setVerticalAlignment(JButton.NORTH);
         
-        panel = new GridBagPanel(new Insets(1, 1, 1, 1));
+        panel = new GridBagPanel(new Insets(1, 1, 1, 1));       //<--- Panel
         panel.setBackground(theme.getPaneBKColor());
         panel.setBorder(new LineBorder(theme.getPaneBKColor(), 1));
+        addCompsOnPanel();
 
+        frame = new JFrame("MSCalculator");                     //<--- Frame
+        frame.getContentPane().add(panel, BorderLayout.CENTER);
+        frame.setAlwaysOnTop(true);
+        frame.setResizable(false);
+        frame.setSize(style.getFrameSize());
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLocationRelativeTo(null);
+        {
+            setKeyListener();
+            setActionListener();
+        }
+        frame.setVisible(true);
+    }
+
+    /**
+     * addCompsOnPanel method help to add the required component to the panel,
+     * With the help of the GridBagLayout.
+     */
+    private void addCompsOnPanel() {
         panel.setGridWeight(1.0, 1.0);
-        panel.add(fieldPanel, 0, 0, 4, 1, 1.0, 1.0);
+        panel.add(fieldPanel, 0, 0, 4, 1);
 
         panel.setGridDimension(1, 1);
         panel.setGridWeight(1.0, 0.0);
@@ -96,20 +132,12 @@ public class GUIHandler {
         panel.add(signButton, 0, 5);
         panel.add(numButton[0], 1, 5);
         panel.add(dotButton, 2, 5);
-
-        frame = new JFrame("MSCalculator");
-        frame.getContentPane().add(panel, BorderLayout.CENTER);
-        frame.setAlwaysOnTop(true);
-        frame.setSize(style.getFrameWidth(), style.getFrameHeight());
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setLocationRelativeTo(null);
-        {
-            setKeyListener();
-            setActionListener();
-        }
-        frame.setVisible(true);
     }
 
+    /**
+     * setActionListener meathod is used to set the action to buttons,
+     * with the help of addActionListener and ActionHandler class.
+     */
     private void setActionListener() {
         ActionListener listener  = new ActionHandler(mainField, subField);
 
@@ -128,6 +156,10 @@ public class GUIHandler {
         resultButton.addActionListener(listener);
     }
 
+    /**
+     * setKeyListener method is used to set the keystorke (of keyboard)
+     * to the respective action of the button.
+     */
     private void setKeyListener() {
         frame.addKeyListener(new KeyAdapter() {
             @Override

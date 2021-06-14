@@ -1,9 +1,15 @@
+/*
+ * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
+ * 
+ */
 package theme;
 
 import java.awt.Color;
 
 /**
- * DefaultTheme
+ * DefaultTheme is the default Color theme for this Calculator.
+ * This class implements the Theme interface, So, this class must
+ * define all methods declared in such interface.
  */
 public class DefaultTheme implements Theme{
     public static final Color PANE_BK_COLOR = new Color(235, 235, 235);

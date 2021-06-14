@@ -1,9 +1,15 @@
+/*
+ * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
+ * 
+ */
 package style;
 
 import java.awt.Font;
+import java.awt.Dimension;
 
 /**
- * DefaultStyle
+ * DefaultStyle is the default style and size of the frame, buttons and their fonts
+ * used in the GUI of this Calculator.
  */
 public class DefaultStyle implements Style{
     public static final Font numButtonFont = new Font("Arial", Font.PLAIN, 22);
@@ -13,6 +19,8 @@ public class DefaultStyle implements Style{
     public static final Font signButtonFont = new Font("Arial", Font.PLAIN, 16);
     public static final int frameWidth = 258;
     public static final int frameHeight = 340;
+    public static final int buttonWidth = 56;
+    public static final int buttonHeight = 43;
 
     @Override
     public Font getNumButtonFont() {
@@ -40,13 +48,13 @@ public class DefaultStyle implements Style{
     }
 
     @Override
-    public int getFrameWidth() {
-        return frameWidth;
+    public Dimension getFrameSize() {
+        return new Dimension(frameWidth, frameHeight);
     }
 
     @Override
-    public int getFrameHeight() {
-        return frameHeight;
+    public Dimension getButtonSize() {
+        return new Dimension(buttonWidth, buttonHeight);
     }
 
 }

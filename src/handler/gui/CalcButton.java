@@ -1,6 +1,9 @@
+/*
+ * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
+ * 
+ */
 package handler.gui;
 
-import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JButton;
@@ -11,7 +14,10 @@ import theme.Theme;
 import style.Style;
 
 /**
- * CalcButton
+ * CalcButton class used to design buttons specially for MSCalculator by extending the
+ * JButton class of the JavaSE and with the help of style and theme. Moreover,
+ * the hover effect of the button is also handled by this class, with
+ * the help of ButtonType interface.
  */
 public class CalcButton extends JButton {
     private static final int borderThickness = 1;
@@ -19,6 +25,15 @@ public class CalcButton extends JButton {
     private Style style;
     private Theme theme;
 
+    /**
+     * This constructor of CalcButton is point where this class initialize its field
+     * and destributing the field-values according to the button type,
+     * with the help of the argument passed as the paramerter.
+     * @param text  this is the text we want to write on the button.
+     * @param type  this is the type of button we are forming.
+     * @param style this is the style and the size used by the button.
+     * @param theme this is the theme used by the button.
+     */
     public CalcButton(String text, ButtonType type, Style style, Theme theme) {
         super(text);
         this.type = type;
@@ -26,7 +41,7 @@ public class CalcButton extends JButton {
         this.theme = theme;
 
         setFocusable(false);
-        setPreferredSize(new Dimension(56, 43));
+        setPreferredSize(style.getButtonSize());
 
         if(type == ButtonType.NUMPAD || type == ButtonType.SIGN) {
             settingForNum();
@@ -41,6 +56,10 @@ public class CalcButton extends JButton {
         setHoverEffect();
     }
 
+    /*
+     * settingForNum set the field according to the NUMPAD ButtonType.
+     * Numpad buttons have its own look-and-feel in this calculator.
+     */
     private void settingForNum() {
         if(type == ButtonType.SIGN) {
             setFont(style.getSignButtonFont());
@@ -53,6 +72,10 @@ public class CalcButton extends JButton {
         setBorder(new LineBorder(theme.getNumBKColor(), borderThickness));
     }
 
+    /*
+     * settingForOpr set the field according to the OPERATOR ButtonType,
+     * These buttons also have its own look-and-feel.
+     */
     private void settingForOpr() {
         setFont(style.getOprButtonFont());
         setForeground(theme.getOprFGColor());
@@ -60,6 +83,10 @@ public class CalcButton extends JButton {
         setBorder(new LineBorder(theme.getOprBKColor(), borderThickness));
     }
 
+    /*
+     * settingForOpr set the field according to the RESULT ButtonType,
+     * These result button has different look-and-feel.
+     */
     private void settingForResult() {
         setFont(style.getOprButtonFont());
         setForeground(theme.getResultFGColor());
@@ -67,6 +94,10 @@ public class CalcButton extends JButton {
         setBorder(new LineBorder(theme.getResultBKColor(), borderThickness));
     }
 
+    /*
+     * setHoverEffect set hover effect to the button with ButtonType 
+     * by using the repective theme color.
+     */
     private void setHoverEffect() {
         addMouseListener(new MouseAdapter() {
             
