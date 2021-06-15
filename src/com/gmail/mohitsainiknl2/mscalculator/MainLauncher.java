@@ -2,13 +2,16 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-import style.Style;
-import style.DefaultStyle;
-import theme.Theme;
-import theme.DefaultTheme;
-import handler.GUIHandler;
 
-/**
+package com.gmail.mohitsainiknl2.mscalculator;
+
+import com.gmail.mohitsainiknl2.mscalculator.style.Style;
+import com.gmail.mohitsainiknl2.mscalculator.style.DefaultStyle;
+import com.gmail.mohitsainiknl2.mscalculator.theme.Theme;
+import com.gmail.mohitsainiknl2.mscalculator.theme.DefaultTheme;
+import com.gmail.mohitsainiknl2.mscalculator.handler.GUIHandler;
+
+/** 
  * MainLauncher is the starting point of this Calculator, Moreover,
  * it also set it's look and launch the GUI Handler class,
  * Which handle the further execution.
@@ -18,7 +21,7 @@ public class MainLauncher {
     Style style;
     Theme theme;
 
-    public MainLauncher() {         // <--- Constructor
+    private MainLauncher() {         // <--- Internal Constructor
         style = new DefaultStyle();
         theme = new DefaultTheme();
         gui = new GUIHandler(style, theme);

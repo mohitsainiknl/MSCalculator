@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-package handler.gui;
+package com.gmail.mohitsainiknl2.mscalculator.handler.gui;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -10,8 +10,8 @@ import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
 
-import theme.Theme;
-import style.Style;
+import com.gmail.mohitsainiknl2.mscalculator.theme.Theme;
+import com.gmail.mohitsainiknl2.mscalculator.style.Style;
 
 /**
  * CalcButton class used to design buttons specially for MSCalculator by extending the

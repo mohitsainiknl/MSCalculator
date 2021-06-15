@@ -1,11 +1,13 @@
 /*
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
- */
-package handler.event;
+ */ 
+package com.gmail.mohitsainiknl2.mscalculator.handler.event;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+
+import com.gmail.mohitsainiknl2.util.debug.Assertion;
 
 public class Calculator {
 
@@ -17,16 +19,17 @@ public class Calculator {
      * @return
      */
     public static String calculate(BigInteger NumOne, BigInteger NumTwo, char operator) {
-        String result = "0";
-        System.out.print("NumOne = " + NumOne);
-        System.out.println(", NumTwo = " + NumTwo);
+        String result = NumOne.toString();
+        Assertion.throwMessage("NumOne = " + NumOne + ", NumTwo = " + NumTwo);
+        Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
+
         switch(operator) {
             case '+' : result = NumOne.add     (NumTwo).toString(); break;
             case '-' : result = NumOne.subtract(NumTwo).toString(); break;
             case '×' : result = NumOne.multiply(NumTwo).toString(); break;
             case '÷' : result = NumOne.divide  (NumTwo).toString(); break;
             case '=' : result = NumOne                  .toString(); break;
-            default  : System.out.println("Operator is NOT in Calculator!");
+            default  : Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
         }
         return result;
     }
@@ -39,17 +42,18 @@ public class Calculator {
      * @return
      */
     public static String calculate(BigDecimal NumOne, BigDecimal NumTwo, char operator) {
-        String result = "0";
-        System.out.print("NumOne = " + NumOne);
-        System.out.println(", NumTwo = " + NumTwo);
+        String result = NumOne.toString();
+        Assertion.throwMessage("NumOne = " + NumOne + ", NumTwo = " + NumTwo);
+
         switch(operator) {
             case '+' : result = NumOne.add     (NumTwo).toString(); break;
             case '-' : result = NumOne.subtract(NumTwo).toString(); break;
             case '×' : result = NumOne.multiply(NumTwo).toString(); break;
             case '÷' : result = NumOne.divide  (NumTwo).toString(); break;
             case '=' : result = NumOne                  .toString(); break;
-            default  : System.out.println("Operator is NOT in Calculator!");
+            default  : Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
         }
         return result;
     }
+
 }

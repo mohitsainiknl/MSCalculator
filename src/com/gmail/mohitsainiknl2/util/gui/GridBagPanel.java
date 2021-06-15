@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-package com.gmail.mohitsainiknl2.gui;
+package com.gmail.mohitsainiknl2.util.gui;
 
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;

@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-package handler.gui;
+package com.gmail.mohitsainiknl2.mscalculator.handler.gui;
 
 /**
  * ButtonType enumeration help to deffenciate the button in the CalcButton class.

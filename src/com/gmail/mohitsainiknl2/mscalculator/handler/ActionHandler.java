@@ -2,16 +2,16 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  *  
  */
-package handler;
+package com.gmail.mohitsainiknl2.mscalculator.handler;
 
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.awt.event.ActionEvent;
 
-import handler.event.CalcUtilities;
-import handler.event.Calculator;
-import handler.gui.CalcField;
+import com.gmail.mohitsainiknl2.mscalculator.handler.event.CalcUtilities;
+import com.gmail.mohitsainiknl2.mscalculator.handler.event.Calculator;
+import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcField;
 
 /**
  * ActionHandler
@@ -37,19 +37,19 @@ public class ActionHandler extends CalcUtilities implements ActionListener {
         this.mainField  = mainField;
         this.subField = subField;
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
         String source = (String)e.getActionCommand();
         initialize();
-
+        
         int i;
         for (i = 0; i < 10; i++) {
             if(source.equals("" + i)) {
                 break;
             }
         }
-
+        
         if(i != 10) {
             mainField.setText(mainText + i);
             firstZeroRemover(mainField);

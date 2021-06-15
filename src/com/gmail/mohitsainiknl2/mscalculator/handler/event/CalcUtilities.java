@@ -2,9 +2,9 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */ 
-package handler.event;
+package com.gmail.mohitsainiknl2.mscalculator.handler.event;
 
-import handler.gui.CalcField;
+import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcField;
 
 /**
  * CalcUtilities
