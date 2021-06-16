@@ -35,7 +35,6 @@ public class GUIHandler {
     CalcButton numButton[], addButton, subButton, mtpyButton, divButton;
     CalcButton dotButton,signButton, resultButton, clearButton, backButton;
 
-
     /**
      * This constructor of GUIHandler help to initialize the initial conponent
      * used throughtout the class, with the help of parameters, respectively.

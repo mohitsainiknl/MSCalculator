@@ -6,51 +6,63 @@ package com.gmail.mohitsainiknl2.mscalculator.handler.event;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.math.RoundingMode;
 
 import com.gmail.mohitsainiknl2.util.debug.Assertion;
 
+/**
+ * Calculator class is the core class of MSCalculator, which actually perform the
+ * arithmetic operations.
+ */
 public class Calculator {
 
     /**
-     * 
-     * @param NumOne
-     * @param NumTwo
-     * @param operator
-     * @return
+     * precision field help to specify the number of precision in the
+     * calculate with the divide operator.
      */
-    public static String calculate(BigInteger NumOne, BigInteger NumTwo, char operator) {
-        String result = NumOne.toString();
-        Assertion.throwMessage("NumOne = " + NumOne + ", NumTwo = " + NumTwo);
-        Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
+    private static final int precision = 8;
+
+    /**
+     * this calculate method perform the operation on the BigInegers only,
+     * and return the result in the String format.
+     * @param numOne    this is the first operand for the calculation.
+     * @param numTwo    this is the second operand for the calculation.
+     * @param operator  this is the operator of the calculation.
+     * @return  return the result of the calculation in String format.
+     */
+    public static String calculate(BigInteger numOne, BigInteger numTwo, char operator) {
+        String result = numOne.toString();
+        Assertion.throwMessage("(" + numOne + " " + operator + " " + numTwo + ") --At Calculation");
 
         switch(operator) {
-            case '+' : result = NumOne.add     (NumTwo).toString(); break;
-            case '-' : result = NumOne.subtract(NumTwo).toString(); break;
-            case '×' : result = NumOne.multiply(NumTwo).toString(); break;
-            case '÷' : result = NumOne.divide  (NumTwo).toString(); break;
-            case '=' : result = NumOne                  .toString(); break;
+            case '+' : result = numOne.add     (numTwo).toString(); break;
+            case '-' : result = numOne.subtract(numTwo).toString(); break;
+            case '×' : result = numOne.multiply(numTwo).toString(); break;
+            case '÷' : result = (new BigDecimal(numOne)).divide (new BigDecimal(numTwo), precision, RoundingMode.HALF_UP).toString();break;
+            case '=' : result = numOne                  .toString(); break;
             default  : Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
         }
         return result;
     }
 
     /**
-     * 
-     * @param NumOne
-     * @param NumTwo
-     * @param operator
-     * @return
+     * this calculate method perform the operation on the BigDecimal only,
+     * and return the result in the String format.
+     * @param numOne    this is the first operand for the calculation.
+     * @param numTwo    this is the second operand for the calculation.
+     * @param operator  this is the operator of the calculation.
+     * @return  return the result of the calculation in String format.
      */
-    public static String calculate(BigDecimal NumOne, BigDecimal NumTwo, char operator) {
-        String result = NumOne.toString();
-        Assertion.throwMessage("NumOne = " + NumOne + ", NumTwo = " + NumTwo);
+    public static String calculate(BigDecimal numOne, BigDecimal numTwo, char operator) {
+        String result = numOne.toString();
+        Assertion.throwMessage("(" + numOne + " " + operator + " " + numTwo + ") --At Calculation");
 
         switch(operator) {
-            case '+' : result = NumOne.add     (NumTwo).toString(); break;
-            case '-' : result = NumOne.subtract(NumTwo).toString(); break;
-            case '×' : result = NumOne.multiply(NumTwo).toString(); break;
-            case '÷' : result = NumOne.divide  (NumTwo).toString(); break;
-            case '=' : result = NumOne                  .toString(); break;
+            case '+' : result = numOne.add     (numTwo).toString(); break;
+            case '-' : result = numOne.subtract(numTwo).toString(); break;
+            case '×' : result = numOne.multiply(numTwo).toString(); break;
+            case '÷' : result = numOne.divide  (numTwo, precision, RoundingMode.HALF_UP).toString(); break;
+            case '=' : result = numOne                  .toString(); break;
             default  : Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
         }
         return result;
