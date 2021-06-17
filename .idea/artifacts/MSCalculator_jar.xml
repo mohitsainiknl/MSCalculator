@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="MSCalculator:jar">
+    <output-path>$PROJECT_DIR$/MSCalculator_jar</output-path>
+    <root id="archive" name="MSCalculator.jar">
+      <element id="module-output" name="MSCalculator" />
+    </root>
+  </artifact>
+</component>
