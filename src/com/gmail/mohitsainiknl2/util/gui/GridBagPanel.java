@@ -8,21 +8,28 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
 import java.awt.Component;
+import java.io.Serial;
 
 import javax.swing.JPanel;
 
 /**
  * <code>GridBagPanel</code> is a convenient way of using <code>gridbaglayout</code> as the layout of the <code>JPanel</code>.
  * Basically, this class make a JPanel and set the gridbaglayout on it and take Constraints from the user at the time of
- * initalization or mutually with the help of object.
- * <p> This will help to reduse the length and complexity of the code, while making a layout with many no. of components on it.
- * Hence, This class makes the gridbagLayout more powerfull in the java.
+ * initialization or mutually with the help of object.
+ * <p> This will help to reduce the length and complexity of the code, while making a layout with many no. of components on it.
+ * Hence, This class makes the gridBagLayout more powerful in the java.
  * 
  * @author Mohit Saini
  */
 public class GridBagPanel extends JPanel {
 
     /**
+	 * This is the serialVersionUID just for the compatibility reasons.
+	 */
+    @Serial
+	private static final long serialVersionUID = -8973520301847179288L;
+
+	/**
      * This field is use to place component in the north side of grid.
      */
     public static final int NORTH = GridBagConstraints.NORTH;
@@ -48,29 +55,24 @@ public class GridBagPanel extends JPanel {
     public static final int CENTER = GridBagConstraints.CENTER;
 
     /**
-     * This field stratch the component both vertically and horizontally inside the grid
+     * This field stretch the component both vertically and horizontally inside the grid
      */
     public static final int BOTH = GridBagConstraints.BOTH;
 
     /**
-     * This field stratch the component vertically inside the grid
+     * This field stretch the component vertically inside the grid
      */
     public static final int VERTICAL = GridBagConstraints.VERTICAL;
 
     /**
-     * This field strach the component horizontally inside the grid
+     * This field stretch the component horizontally inside the grid
      */
     public static final int HORIZONTAL = GridBagConstraints.HORIZONTAL;
 
     /**
-     * This is the obj of the gridbaglayout, used to set to the JPanel
+     * This is the obj of the gridBagConstraints, used to set to the gridbaglayout
      */
-    private GridBagLayout gbl;
-
-    /**
-     * This is the obj of the gridbagconstraints, used to set to the gridbaglayout
-     */
-    private GridBagConstraints gbc;
+    private final GridBagConstraints gbc;
 
     /**
      * The field use to hold the GridBagConstraints.insets
@@ -135,7 +137,7 @@ public class GridBagPanel extends JPanel {
     /**
      * Creates a new GridBagPanel with ipadx zero and ipady also zero
      * @param insets the Insets among grids of the layout
-     * @param fill the stratching behavior of the component inside the grid
+     * @param fill the stretching behavior of the component inside the grid
      * @param anchor the position of the component inside the grid
      */
     public GridBagPanel(Insets insets, int fill, int anchor) {
@@ -145,7 +147,7 @@ public class GridBagPanel extends JPanel {
     /**
      * Creates a new GridBagPanel with the help of parameters
      * @param insets the Insets among grids of the layout
-     * @param fill the stratching behavior of the component inside the grid
+     * @param fill the stretching behavior of the component inside the grid
      * @param anchor the position of the component inside the grid
      * @param ipadx the padding X-axis of the grid to set component
      * @param ipady the padding Y-axis of the grid to set component
@@ -161,7 +163,7 @@ public class GridBagPanel extends JPanel {
         gridheight = 1;
         weightx = 1.0;
         weighty = 1.0;
-        gbl = new GridBagLayout();
+        GridBagLayout gbl = new GridBagLayout();
         gbc = new GridBagConstraints();
         setLayout(gbl);
     }
@@ -179,7 +181,7 @@ public class GridBagPanel extends JPanel {
 
     /**
      * This method is use to set the fill behavior of the component inside the grid
-     * @param fill the stratching side
+     * @param fill the stretching side
      */
     public void setFill(int fill) {
         this.fill = fill;
@@ -206,7 +208,7 @@ public class GridBagPanel extends JPanel {
     /**
      * This method is use to set the dimension of the grid
      * @param width the width of grid
-     * @param heidht the height of grid
+     * @param height the height of grid
      */
     public void setGridDimension(int width, int height) {
         gridwidth = width;

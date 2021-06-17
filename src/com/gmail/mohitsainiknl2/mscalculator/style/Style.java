@@ -8,7 +8,7 @@ import java.awt.Font;
 import java.awt.Dimension;
 
 /**
- * Style interface help programer to set the Style and Scale
+ * Style interface help program to set the Style and Scale
  * of the frame, buttons and their fonts used in this Calculator.
  */
 public interface Style {

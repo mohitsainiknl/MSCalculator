@@ -14,18 +14,33 @@ import java.lang.Throwable;
 /**
  * Assertion class is designed to help the developer in debugging process,
  * This class print the message to Output-Stream if the assertion is enabled
- * for the project which uses this.
+ * for the project which uses this.<br>
  * 
- * To enable Assertion :
- * Command-Prompt :
- *      java -ea <program_name> should do it on the command prompt.
- * VS Code :
- *      goto the link- "https://stackoverflow.com/questions/54024007/how-to-enable-java-assertions-in-visual-studio-code"
- * Eclipse :
- *      goto the link- "https://stackoverflow.com/questions/5509082/eclipse-enable-assertions"
- * IntelliJ :
- *      goto the link- "https://stackoverflow.com/questions/18168257/where-to-add-compiler-options-like-ea-in-intellij-idea"
+ * To enable Assertion :<br>
+ * Command-Prompt :<br>
+ *      "java -ea -jar MSCalculator.jar" should do it on the command prompt.<br><br>
  * 
+ * VS Code :<br>
+ *      goto- "Run and Debug(Ctrl + Shift + D)" >> On top drop-down menu select "Add Configuration" <br>
+ *            Then, (new launch.json file will open),<br>
+ *            Add(with quotes),  "vmArgs": "-enableassertions" , under the Configurations section.<br>
+ *            and, Save the file.<br><br>
+ * 
+ * 					OR<br>
+ *      goto the link- "https://stackoverflow.com/questions/54024007/how-to-enable-java-assertions-in-visual-studio-code"<br><br>
+ * 
+ * Eclipse :<br>
+ * 		goto- Run >> Run_Configurations >> Java_Applications(left_sidebar) >> MainLauncher >> Arguments <br>
+ * 			  Then, type "-ea" or "-enableassertions" under VM Arguments section <br>
+ * 			  Click, Apply and Run.<br><br>
+ * 
+ * 					OR<br>
+ *      goto the link- "https://stackoverflow.com/questions/5509082/eclipse-enable-assertions"<br><br>
+ *      
+ * IntelliJ :<br>
+ *      goto the link- "https://stackoverflow.com/questions/18168257/where-to-add-compiler-options-like-ea-in-intellij-idea"<br>
+ *
+ * @author Mohit Saini
  */
 public class Assertion {
     private static final boolean showMessage = true;

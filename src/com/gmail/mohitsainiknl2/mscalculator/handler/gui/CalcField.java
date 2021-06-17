@@ -5,26 +5,27 @@
 package com.gmail.mohitsainiknl2.mscalculator.handler.gui;
 
 import java.awt.Color;
+import java.io.Serial;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import com.gmail.mohitsainiknl2.mscalculator.style.Style;
 import com.gmail.mohitsainiknl2.mscalculator.theme.Theme;
 
 /**
  * CalcField class used to set-up the JTextField according to the MSCalculator.
- * This class help to reuse this code-block for all textfields.
+ * This class help to reuse this code-block for all textFields.
  */
 public class CalcField extends JTextField{
+	@Serial
+    private static final long serialVersionUID = 3035451494840107479L;
 
-    /**
+	/**
      * This constructor is used to set-up initial field of the JTextField,
      * with the help of parameters.
      * @param text  this is the initial text in the field.
-     * @param style this is the style of the used in the calculator.
      * @param theme this is the theme used in this calculator.
      */
-    public CalcField(String text, Style style, Theme theme) {
+    public CalcField(String text, Theme theme) {
         super(text);
 
         setFocusable(false);

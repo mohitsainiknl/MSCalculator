@@ -6,6 +6,7 @@ package com.gmail.mohitsainiknl2.mscalculator.handler.gui;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.Serial;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
@@ -20,15 +21,17 @@ import com.gmail.mohitsainiknl2.mscalculator.style.Style;
  * the help of ButtonType interface.
  */
 public class CalcButton extends JButton {
-    private static final int borderThickness = 1;
-    private ButtonType type;
-    private Style style;
-    private Theme theme;
+    @Serial
+	private static final long serialVersionUID = -8910325544519813492L;
+	private static final int borderThickness = 1;
+    private final ButtonType type;
+    private final Style style;
+    private final Theme theme;
 
     /**
      * This constructor of CalcButton is point where this class initialize its field
-     * and destributing the field-values according to the button type,
-     * with the help of the argument passed as the paramerter.
+     * and distributing the field-values according to the button type,
+     * with the help of the argument passed as the parameter.
      * @param text  this is the text we want to write on the button.
      * @param type  this is the type of button we are forming.
      * @param style this is the style and the size used by the button.
@@ -96,7 +99,7 @@ public class CalcButton extends JButton {
 
     /*
      * setHoverEffect set hover effect to the button with ButtonType 
-     * by using the repective theme color.
+     * by using the respective theme color.
      */
     private void setHoverEffect() {
         addMouseListener(new MouseAdapter() {

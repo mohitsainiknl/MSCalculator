@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.awt.event.ActionEvent;
 
-import com.gmail.mohitsainiknl2.mscalculator.handler.event.FormtUtilities;
+import com.gmail.mohitsainiknl2.mscalculator.handler.event.FormatUtilities;
 import com.gmail.mohitsainiknl2.mscalculator.handler.event.CalcUtilities;
 import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcField;
 import com.gmail.mohitsainiknl2.util.debug.Assertion;
@@ -22,13 +22,13 @@ public class ActionHandler implements ActionListener {
     private static boolean isNewMainNum;
     private static boolean isNewSubNum;
     private String mainText, subText;
-    private CalcField mainField, subField;
+    private final CalcField mainField, subField;
 
     private static CalcUtilities cUtil;
 
 
     /**
-     * This constructor initialize the CalcField objs with the passed values,
+     * This constructor initialize the CalcField objects with the passed values,
      * also initialize the class' internal fields.
      * @param mainField this is the main field of the MSCalculator.
      * @param subField  this is the sub field of the MSCalculator.
@@ -71,12 +71,12 @@ public class ActionHandler implements ActionListener {
     
 
     /**
-     * actionPerformed method help to perfom the actions on button click, with
+     * actionPerformed method help to perform the actions on button click, with
      * the help of the source of the ActionEvent (passed as parameter).
      */
     @Override
     public void actionPerformed(ActionEvent e) {
-        String source = (String)e.getActionCommand();
+        String source = e.getActionCommand();
         initialize();
 
         int i;
@@ -88,24 +88,24 @@ public class ActionHandler implements ActionListener {
         
         if(i != 10) {
             mainText = mainText + i;
-           FormtUtilities.setMainFieldText(mainField, FormtUtilities.firstZeroRemover(mainText));
+           FormatUtilities.setMainFieldText(mainField, FormatUtilities.firstZeroRemover(mainText));
         }
         else if(source.equals("C")) {
-            FormtUtilities.clearField(mainField, subField);
+            FormatUtilities.clearField(mainField, subField);
             initializeZeroValues_toAll();
         }
         else if(source.equals("<")) {
-            FormtUtilities.backSpaceTheInput(mainText, mainField);
+            FormatUtilities.backSpaceTheInput(mainText, mainField);
             mainText = mainField.getText();
-            cUtil.changeIsInteger(FormtUtilities.doWeNeedInteger(mainText, subText, CalcUtilities.getIsInteger()));
+            cUtil.changeIsInteger(FormatUtilities.doWeNeedInteger(mainText, subText, CalcUtilities.getIsInteger()));
         }
         else if(source.equals("+/-")) {
-            FormtUtilities.changeSign(mainText, mainField);
+            FormatUtilities.changeSign(mainText, mainField);
         }
         else if(source.equals(".")) {
-            FormtUtilities.setDotInField(mainText, mainField);
+            FormatUtilities.setDotInField(mainText, mainField);
             mainText = mainField.getText();
-            cUtil.changeIsInteger(FormtUtilities.doWeNeedInteger(mainText, subText, CalcUtilities.getIsInteger()));
+            cUtil.changeIsInteger(FormatUtilities.doWeNeedInteger(mainText, subText, CalcUtilities.getIsInteger()));
         }
         else if(source.equals("+")) {
             cUtil.calculateAndSetNum('+');
@@ -161,7 +161,7 @@ public class ActionHandler implements ActionListener {
         }
         else {
             subText = "";
-            FormtUtilities.setSubFieldText(subField, subText);
+            FormatUtilities.setSubFieldText(subField, subText);
             isNewSubNum = false;
         }
         cUtil.initialize(mainText, subText, mainField, subField);
@@ -177,14 +177,14 @@ public class ActionHandler implements ActionListener {
         mainText = mainField.getText();
         final boolean isInteger = CalcUtilities.getIsInteger();
         if(isInteger) {
-            final boolean isDecimalMainField = FormtUtilities.isInString(mainText, '.');
-            if(isInteger == isDecimalMainField) {
-                Assertion.throwErrorMessage(new Throwable("\"isIneger\" field has WORNG value, " + mainText + " --MainText"));
+            final boolean isDecimalMainField = FormatUtilities.isInString(mainText, '.');
+            if(isDecimalMainField) {
+                Assertion.throwErrorMessage(new Throwable("\"isInteger\" field has WRONG value, " + mainText + " --MainText"));
                 return;
             }
         }
 
-        final String mainNum = FormtUtilities.removeUnrequiredDot(mainText);
+        final String mainNum = FormatUtilities.removeUnRequiredDot(mainText);
         if(isInteger) {
             cUtil.setBigMainInt(new BigInteger(mainNum));
         }

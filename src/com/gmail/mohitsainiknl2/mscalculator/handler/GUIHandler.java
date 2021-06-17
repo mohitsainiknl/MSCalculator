@@ -32,12 +32,13 @@ public class GUIHandler {
     JFrame frame;
     GridBagPanel panel, fieldPanel;
     CalcField mainField, subField;
-    CalcButton numButton[], addButton, subButton, mtpyButton, divButton;
+    CalcButton[] numButton;
+    CalcButton addButton, subButton, mtpyButton, divButton;
     CalcButton dotButton,signButton, resultButton, clearButton, backButton;
 
     /**
-     * This constructor of GUIHandler help to initialize the initial conponent
-     * used throughtout the class, with the help of parameters, respectively.
+     * This constructor of GUIHandler help to initialize the initial component
+     * used throughout the class, with the help of parameters, respectively.
      * @param style this defines the style and the size of the Calculator.
      * @param theme this defines the theme of the Calculator, with help of it's color-plate.
      */
@@ -53,9 +54,9 @@ public class GUIHandler {
     public void handle() {
         UIManager.put("Button.select", theme.getButtonPressBKColor());
 
-        mainField = new CalcField("0", style, theme);       //<--- Field Panel
+        mainField = new CalcField("0", theme);       //<--- Field Panel
             mainField.setFont(style.getMainFieldFont());
-        subField = new CalcField("", style, theme);
+        subField = new CalcField("", theme);
             subField.setFont(style.getSubFieldFont());
         fieldPanel = new GridBagPanel();
         fieldPanel.setOpaque(false);
@@ -134,7 +135,7 @@ public class GUIHandler {
     }
 
     /**
-     * setActionListener meathod is used to set the action to buttons,
+     * setActionListener method is used to set the action to buttons,
      * with the help of addActionListener and ActionHandler class.
      */
     private void setActionListener() {
@@ -156,47 +157,50 @@ public class GUIHandler {
     }
 
     /**
-     * setKeyListener method is used to set the keystorke (of keyboard)
+     * setKeyListener method is used to set the keystroke (of keyboard)
      * to the respective action of the button.
      */
     private void setKeyListener() {
         frame.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
-                final String key = KeyEvent.getKeyText(e.getKeyCode());
-                if(key.equals("Period") || key.equals("NumPad .")) {
+            final String key = KeyEvent.getKeyText(e.getKeyCode());
+            switch (key) {
+                case "Period":
+                case "NumPad .":
                     dotButton.doClick();
-                }
-                else if(key.equals("NumPad +")) {
+                    break;
+                case "NumPad +":
                     addButton.doClick();
-                }
-                else if(key.equals("NumPad -")) {
+                    break;
+                case "NumPad -":
                     subButton.doClick();
-                }
-                else if(key.equals("NumPad *")) {
+                    break;
+                case "NumPad *":
                     mtpyButton.doClick();
-                }
-                else if(key.equals("NumPad /")) {
+                    break;
+                case "NumPad /":
                     divButton.doClick();
-                }
-                else if(key.equals("C")) {
+                    break;
+                case "C":
                     clearButton.doClick();
-                }
-                else if(key.equals("Backspace")) {
+                    break;
+                case "Backspace":
                     backButton.doClick();
-                }
-                else if(key.equals("Enter")) {
+                    break;
+                case "Enter":
                     UIManager.put("Button.select", theme.getResultButtonPressBKColor());
                     resultButton.doClick();
                     UIManager.put("Button.select", theme.getButtonPressBKColor());
-                }
-                else {
+                    break;
+                default:
                     for (int i = 0; i < 10; i++) {
-                        if(key.equals("" + i) || key.equals("NumPad-" + i)) {
+                        if (key.equals("" + i) || key.equals("NumPad-" + i)) {
                             numButton[i].doClick();
                         }
                     }
-                }
+                    break;
+            }
             }
         });
     }
