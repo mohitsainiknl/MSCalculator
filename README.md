@@ -4,7 +4,7 @@ Give a :star: if you *like it!*<br>
 ![Screenshot of MSCalculator ](/res/.readme/MSCalculator_home.png)
 
 ## Overview :
-MSCalculator is a beginner-friendly java swing project, in which every *method* handle one particular task, every *class* handle one particular process and every package handle a part of this Calculator, besides this, every method, class and package has the [Documentation](https://github.com/mohitsainiknl/MSCalculator/blob/main/documentation/index.html%20-%20Shortcut.lnk) comment; which help me and other programmers to know the functionality.  All the calculation are done with help of the `BigInteger` and `BigDecimal` classes (So, there is no-any limit on the range of the integer or decimal). This calculator has `Theme.java` and `Style.java` *interface* which help to make any no. of themes and Styles for this project. The layout statements have reduced by using `GridBagPanel.java` and make the code simpler. There are *Assertions* (added with the help of `Assertion.java`) also in the code,
+MSCalculator is a beginner-friendly java swing project, in which every *method* handle one particular task, every *class* handle one particular process and every package handle a part of this Calculator, besides this, every method, class and package has the [documentation](https://github.com/mohitsainiknl/MSCalculator/tree/master/documentation) comment; which help me and other programmers to know the functionality.  All the calculation are done with help of the `BigInteger` and `BigDecimal` classes (So, there is no-any limit on the range of the integer or decimal). This calculator has `Theme.java` and `Style.java` *interface* which help to make any no. of themes and Styles for this project. The layout statements have reduced by using `GridBagPanel.java` and make the code simpler. There are *Assertions* (added with the help of `Assertion.java`) also in the code,
 
 ### Example
 ``` java
@@ -51,7 +51,7 @@ C:\>java -ea -jar -Dfile.encoding=UTF-8 path/to/your/runnable/jar
 ---
 ## Technical Details :
 
-- **Full Setup Size :** 6 MB
+- **Full Setup Size :** 1.62 MB
 - **Programming Language :** Java (JavaSE)
 - **Interface :** Graphical User Interface
 - **Framework Used :** AWT and Swing
@@ -72,7 +72,7 @@ C:\>java -ea -jar -Dfile.encoding=UTF-8 path/to/your/runnable/jar
 
 ---
 ## Download : 
-https://github.com/mohitsainiknl/MSCalculator/archive/refs/heads/main.zip
+https://github.com/mohitsainiknl/MSCalculator/archive/refs/heads/master.zip
 <br>
 <br>
 
