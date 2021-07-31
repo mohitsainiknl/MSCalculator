@@ -3,13 +3,13 @@
  * 
  */
 
-package com.gmail.mohitsainiknl2.mscalculator;
+package mscalculator;
 
-import com.gmail.mohitsainiknl2.mscalculator.style.Style;
-import com.gmail.mohitsainiknl2.mscalculator.style.DefaultStyle;
-import com.gmail.mohitsainiknl2.mscalculator.theme.Theme;
-import com.gmail.mohitsainiknl2.mscalculator.theme.DefaultTheme;
-import com.gmail.mohitsainiknl2.mscalculator.handler.GUIHandler;
+import mscalculator.handler.GUIHandler;
+import mscalculator.style.DefaultStyle;
+import mscalculator.style.Style;
+import mscalculator.theme.DefaultTheme;
+import mscalculator.theme.Theme;
 
 /** 
  * MainLauncher is the starting point of this Calculator, Moreover,

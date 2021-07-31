@@ -2,10 +2,11 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */ 
-package com.gmail.mohitsainiknl2.mscalculator.handler.event;
+package mscalculator.handler.event;
 
-import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcField;
 import com.gmail.mohitsainiknl2.util.debug.Assertion;
+
+import mscalculator.handler.gui.CalcField;
 
 /**
  * FormatUtilities class help the ActionHandler to manipulate the field text,

@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-package com.gmail.mohitsainiknl2.mscalculator.handler;
+package mscalculator.handler;
 
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
@@ -14,12 +14,13 @@ import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
-import com.gmail.mohitsainiknl2.mscalculator.handler.gui.ButtonType;
-import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcButton;
-import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcField;
-import com.gmail.mohitsainiknl2.mscalculator.style.Style;
-import com.gmail.mohitsainiknl2.mscalculator.theme.Theme;
 import com.gmail.mohitsainiknl2.util.gui.GridBagPanel;
+
+import mscalculator.handler.gui.ButtonType;
+import mscalculator.handler.gui.CalcButton;
+import mscalculator.handler.gui.CalcField;
+import mscalculator.style.Style;
+import mscalculator.theme.Theme;
 
 /**
  * GUILauncher class handle the gui functioning of this Calculator, Moreover,

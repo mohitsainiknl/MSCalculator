@@ -1,11 +1,12 @@
-package com.gmail.mohitsainiknl2.mscalculator.handler.event;
+package mscalculator.handler.event;
 
 import java.math.BigInteger;
 import java.math.BigDecimal;
 
-import com.gmail.mohitsainiknl2.mscalculator.handler.ActionHandler;
-import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcField;
 import com.gmail.mohitsainiknl2.util.debug.Assertion;
+
+import mscalculator.handler.ActionHandler;
+import mscalculator.handler.gui.CalcField;
 
 /**
  * CalcUtilities class help the ActionHandler class to perform the calculation

@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-package com.gmail.mohitsainiknl2.mscalculator.style;
+package mscalculator.style;
 
 import java.awt.Font;
 import java.awt.Dimension;

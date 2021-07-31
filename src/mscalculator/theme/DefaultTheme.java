@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-package com.gmail.mohitsainiknl2.mscalculator.theme;
+package mscalculator.theme;
 
 import java.awt.Color;
 

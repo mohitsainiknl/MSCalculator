@@ -2,7 +2,7 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */ 
-package com.gmail.mohitsainiknl2.mscalculator.handler.event;
+package mscalculator.handler.event;
 
 import java.math.BigDecimal;
 import java.math.BigInteger;

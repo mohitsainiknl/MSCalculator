@@ -2,17 +2,18 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  *  
  */
-package com.gmail.mohitsainiknl2.mscalculator.handler;
+package mscalculator.handler;
 
 import java.awt.event.ActionListener;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.awt.event.ActionEvent;
 
-import com.gmail.mohitsainiknl2.mscalculator.handler.event.FormatUtilities;
-import com.gmail.mohitsainiknl2.mscalculator.handler.event.CalcUtilities;
-import com.gmail.mohitsainiknl2.mscalculator.handler.gui.CalcField;
 import com.gmail.mohitsainiknl2.util.debug.Assertion;
+
+import mscalculator.handler.event.CalcUtilities;
+import mscalculator.handler.event.FormatUtilities;
+import mscalculator.handler.gui.CalcField;
 
 /**
  * ActionHandler class handle the action when user click on the button,

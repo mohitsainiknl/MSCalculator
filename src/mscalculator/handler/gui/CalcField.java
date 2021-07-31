@@ -2,14 +2,14 @@
  * Copyright (c) 2021 Mohit Saini, Under MIT License. Use is subject to license terms.
  * 
  */
-package com.gmail.mohitsainiknl2.mscalculator.handler.gui;
+package mscalculator.handler.gui;
 
 import java.awt.Color;
 import java.io.Serial;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
-import com.gmail.mohitsainiknl2.mscalculator.theme.Theme;
+import mscalculator.theme.Theme;
 
 /**
  * CalcField class used to set-up the JTextField according to the MSCalculator.
