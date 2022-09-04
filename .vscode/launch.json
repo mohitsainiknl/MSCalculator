@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MainLauncher",
+            "request": "launch",
+            "mainClass": "mscalculator.MainLauncher",
+            "projectName": "MSCalculator"
+        },
+        {
+            "type": "java",
+            "name": "Launch MainLauncher",
+            "request": "launch",
+            "mainClass": "mscalculator.MainLauncher",
+            "projectName": "MSCalculator_5d7a843a"
+        },
+        {
+            "type": "java",
             "name": "Launch Current File",
             "request": "launch",
             "mainClass": "${file}",

@@ -5,7 +5,6 @@
 package mscalculator.handler.gui;
 
 import java.awt.Color;
-import java.io.Serial;
 import javax.swing.JTextField;
 import javax.swing.border.LineBorder;
 
@@ -16,7 +15,6 @@ import mscalculator.theme.Theme;
  * This class help to reuse this code-block for all textFields.
  */
 public class CalcField extends JTextField{
-	@Serial
     private static final long serialVersionUID = 3035451494840107479L;
 
 	/**

@@ -172,7 +172,7 @@ public class FormatUtilities {
      */
     public static char lastOperatorIn(String subText) {
         char operator = subText.charAt(subText.length()-2);
-        if(operator == '+' ||operator == '-' ||operator == '÷' ||operator == '×') {
+        if(operator == '+' ||operator == '-' ||operator == '\u00D7' ||operator == '\u00F7') {
             return operator;
         }
         return '0';

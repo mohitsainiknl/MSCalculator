@@ -74,8 +74,8 @@ public class GUIHandler {
 
         addButton = new CalcButton("+", ButtonType.OPERATOR, style, theme);
         subButton = new CalcButton("-", ButtonType.OPERATOR, style, theme);
-        mtpyButton = new CalcButton("×", ButtonType.OPERATOR, style, theme);
-        divButton = new CalcButton("÷", ButtonType.OPERATOR, style, theme);
+        mtpyButton = new CalcButton("\u00D7", ButtonType.OPERATOR, style, theme);
+        divButton = new CalcButton("\u00F7", ButtonType.OPERATOR, style, theme);
         clearButton = new CalcButton("C", ButtonType.OPERATOR, style, theme);
         backButton = new CalcButton("<", ButtonType.OPERATOR, style, theme);
         resultButton = new CalcButton("=", ButtonType.RESULT, style, theme);

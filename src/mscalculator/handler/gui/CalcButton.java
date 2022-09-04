@@ -6,7 +6,6 @@ package mscalculator.handler.gui;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.io.Serial;
 import javax.swing.JButton;
 import javax.swing.UIManager;
 import javax.swing.border.LineBorder;
@@ -21,7 +20,6 @@ import mscalculator.theme.Theme;
  * the help of ButtonType interface.
  */
 public class CalcButton extends JButton {
-    @Serial
 	private static final long serialVersionUID = -8910325544519813492L;
 	private static final int borderThickness = 1;
     private final ButtonType type;

@@ -35,12 +35,12 @@ public class Calculator {
         Assertion.throwMessage("(" + numOne + " " + operator + " " + numTwo + ") --At Calculation");
 
         switch (operator) {
-            case '+' -> result = numOne.add(numTwo).toString();
-            case '-' -> result = numOne.subtract(numTwo).toString();
-            case '×' -> result = numOne.multiply(numTwo).toString();
-            case '÷' -> result = (new BigDecimal(numOne)).divide(new BigDecimal(numTwo), precision, RoundingMode.HALF_UP).toString();
-            case '=' -> result = numOne.toString();
-            default -> Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
+            case '+' : result = numOne.add(numTwo).toString();  break;
+            case '-' : result = numOne.subtract(numTwo).toString();  break;
+            case '\u00D7' : result = numOne.multiply(numTwo).toString();  break;
+            case '\u00F7' : result = (new BigDecimal(numOne)).divide(new BigDecimal(numTwo), precision, RoundingMode.HALF_UP).toString();  break;
+            case '=' : result = numOne.toString();  break;
+            default : Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
         }
         return result;
     }
@@ -58,12 +58,12 @@ public class Calculator {
         Assertion.throwMessage("(" + numOne + " " + operator + " " + numTwo + ") --At Calculation");
 
         switch (operator) {
-            case '+' -> result = numOne.add(numTwo).toString();
-            case '-' -> result = numOne.subtract(numTwo).toString();
-            case '×' -> result = numOne.multiply(numTwo).toString();
-            case '÷' -> result = numOne.divide(numTwo, precision, RoundingMode.HALF_UP).toString();
-            case '=' -> result = numOne.toString();
-            default -> Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
+            case '+' : result = numOne.add(numTwo).toString();  break;
+            case '-' : result = numOne.subtract(numTwo).toString();  break;
+            case '\u00D7' : result = numOne.multiply(numTwo).toString();  break;
+            case '\u00F7' : result = numOne.divide(numTwo, precision, RoundingMode.HALF_UP).toString();  break;
+            case '=' : result = numOne.toString();  break;
+            default : Assertion.throwErrorMessage(new Throwable("\"" + operator + "\" Operator is NOT in Calculator!"));
         }
         return result;
     }

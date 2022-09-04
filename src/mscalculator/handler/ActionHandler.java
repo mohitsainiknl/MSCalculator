@@ -114,11 +114,11 @@ public class ActionHandler implements ActionListener {
         else if(source.equals("-")) {
             cUtil.calculateAndSetNum('-');
         }
-        else if(source.equals("×")) {
-            cUtil.calculateAndSetNum('×');
+        else if(source.equals("\u00D7")) {  // Here  \u00D7 = '×'
+            cUtil.calculateAndSetNum('\u00D7');
         }
-        else if(source.equals("÷")) {
-            cUtil.calculateAndSetNum('÷');
+        else if(source.equals("\u00F7")) {  // Here  \u00F7 = '÷'
+            cUtil.calculateAndSetNum('\u00F7');
         }
         else if(source.equals("=")) {
             cUtil.calculateAndSetNum('=');
