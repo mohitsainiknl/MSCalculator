@@ -4,7 +4,7 @@ Give a :star: if you *like it!*<br>
 ![Screenshot of MSCalculator ](/res/.readme/MSCalculator_home.png)
 
 ## Overview :
-MSCalculator is a beginner-friendly java swing project, in which every *method* handle one particular task, every *class* handle one particular process and every package handle a part of this Calculator, besides this, every method, class and package has the [documentation](https://github.com/mohitsainiknl/MSCalculator/tree/master/documentation) comment; which help me and other programmers to know the functionality.  All the calculation are done with help of the `BigInteger` and `BigDecimal` classes (So, there is no-any limit on the range of the integer or decimal). This calculator has `Theme.java` and `Style.java` *interface* which help to make any no. of themes and Styles for this project. The layout statements have reduced by using `GridBagPanel.java` and make the code simpler. There are *Assertions* (added with the help of `Assertion.java`) also in the code,
+MSCalculator is a beginner-friendly java swing project, in which every *method* handle one particular task, every *class* handle one particular process and every package handle a part of this Calculator, besides this, every method, class and package has the documentation comment; which help me and other programmers to know the functionality.  All the calculation are done with help of the `BigInteger` and `BigDecimal` classes (So, there is no-any limit on the range of the integer or decimal). This calculator has `Theme.java` and `Style.java` *interface* which help to make any no. of themes and Styles for this project. The layout statements have reduced by using `GridBagPanel.java` and make the code simpler. There are *Assertions* (added with the help of `Assertion.java`) also in the code,
 
 ### Example
 ``` java
@@ -24,24 +24,10 @@ Wrong age filled!
 which help in the debugging process.
 
 ### In Command Prompt:
-1. #### Enable Assertions
+- #### Enable Assertions
 Simply by adding `-ea` to `-enableassertions` as *vm argument* at run configurations as
 ```
 C:\> java -enableassertions -jar MSCalculator.jar
-```
-
-2. #### Enable Unicode
-By default, the code-page using in the CMD of Windows is **437**. You can test by run this command in the prompt:
-
-```
-C:\>chcp
-Active code page: 437
-```
-This code-page prevent you from showing Unicode characters properly! You have to change code page to **65001** AND using **-Dfile.encoding=UTF-8** for that purpose.
-```
-C:\>chcp 65001
-Active code page: 65001
-C:\>java -ea -jar -Dfile.encoding=UTF-8 path/to/your/runnable/jar
 ```
 <br>
 
@@ -53,9 +39,8 @@ C:\>java -ea -jar -Dfile.encoding=UTF-8 path/to/your/runnable/jar
 
 - **Full Setup Size :** 1.62 MB
 - **Programming Language :** Java (JavaSE)
-- **Interface :** Graphical User Interface
 - **Framework Used :** AWT and Swing
-- **Encoding Used :** UTF-8 (**'×'** is a Unicode Char.)
+- **Encoding Used :** UTF-8
 <br>
 <br>
 
@@ -65,14 +50,19 @@ C:\>java -ea -jar -Dfile.encoding=UTF-8 path/to/your/runnable/jar
 ## System Requirements :
 
 - **Operating System :** Any (Platform Independent)
-- **JRE version :** 8.0 or higher
-- **Development Environment :** VS Code, Eclipse, IntelliJ IDEA, etc
+- **JRE version :** 1.8.0 or higher
+- **Development Environment :** VS Code, Eclipse, IntelliJ IDEA
 <br>
 <br>
 
 ---
-## Download : 
-https://github.com/mohitsainiknl/MSCalculator/archive/refs/heads/master.zip
+## Downloads : 
+#### 1. Entire Repository
+https://github.com/mohitsainiknl/MSCalculator/archive/refs/heads/master.zip <br>
+#### 2. JAR File (Executable)
+https://github.com/mohitsainiknl/MSCalculator/blob/master/publish/MSCalculator.jar <br>
+#### 3. .exe File for Windows (not independent, require JRE to run)
+https://github.com/mohitsainiknl/MSCalculator/blob/master/publish/MSCalculator.exe
 <br>
 <br>
 
